@@ -1,0 +1,119 @@
+--1----- add service
+
+CREATE PROCEDURE AddService
+    @TrainerID INT,
+    @ServiceName NVARCHAR(100),
+    @Description NVARCHAR(255),
+    @Price DECIMAL(10, 2),
+    @Duration INT
+AS
+BEGIN
+    INSERT INTO Services (TrainerID, ServiceName, Description, Price, Duration)
+    VALUES (@TrainerID, @ServiceName, @Description, @Price, @Duration);
+END
+
+--EXEC AddService 
+    @TrainerID = 1, 
+    @ServiceName = 'Personal Training Session', 
+    @Description = 'One-on-one personal training session tailored to your needs.', 
+    @Price = 75.00, 
+    @Duration = 60;
+
+-------------------------------------------------------------------------
+--2----- update service
+
+CREATE PROCEDURE UpdateService
+    @ServiceID INT,
+    @TrainerID INT,
+    @ServiceName NVARCHAR(100),
+    @Description NVARCHAR(255),
+    @Price DECIMAL(10, 2),
+    @Duration INT
+AS
+BEGIN
+    UPDATE Services
+    SET TrainerID = @TrainerID,
+        ServiceName = @ServiceName,
+        Description = @Description,
+        Price = @Price,
+        Duration = @Duration
+    WHERE ServiceID = @ServiceID;
+END
+
+--EXEC UpdateService 
+    @ServiceID = 1, 
+    @ServiceName = 'Group Training Session', 
+    @Description = 'Group session for up to 5 participants.', 
+    @Price = 50.00, 
+    @Duration = 45;
+
+-----------------------------------------------------------------
+--3------delet service
+
+CREATE PROCEDURE DeleteService
+    @ServiceID INT
+AS
+BEGIN
+    DELETE FROM Services
+    WHERE ServiceID = @ServiceID;
+END
+--EXEC DeleteService @ServiceID = 1;
+
+------------------------------------------------------------------
+--4-----getservice by trainers Id
+CREATE PROCEDURE GetServicesByTrainerID
+    @TrainerID INT
+AS
+BEGIN
+    SELECT *
+    FROM Services
+    WHERE TrainerID = @TrainerID;
+END
+
+--EXEC GetServicesByTrainerID @TrainerID = 1;
+
+-----------------------------------------------------------------
+--5------search by price range
+
+CREATE PROCEDURE GetServicesByPriceRange
+    @MinPrice DECIMAL(10, 2),
+    @MaxPrice DECIMAL(10, 2)
+AS
+BEGIN
+    SELECT *
+    FROM Services
+    WHERE Price BETWEEN @MinPrice AND @MaxPrice;
+END
+
+--EXEC GetServicesByPriceRange 
+    @MinPrice = 30.00, 
+    @MaxPrice = 100.00;
+
+----------------------------------------------------------------------
+--6-----count service by trainers
+CREATE PROCEDURE CountServicesByTrainer
+    @TrainerID INT
+AS
+BEGIN
+    SELECT COUNT(*) AS ServiceCount
+    FROM Services
+    WHERE TrainerID = @TrainerID;
+END
+
+--EXEC CountServicesByTrainer @TrainerID = 1;
+
+----------------------------------------------------------------------
+--7-----search service
+CREATE PROCEDURE SearchServices
+    @SearchTerm NVARCHAR(100)
+AS
+BEGIN
+    SELECT *
+    FROM Services
+    WHERE ServiceName LIKE '%' + @SearchTerm + '%' 
+       OR Description LIKE '%' + @SearchTerm + '%';
+END
+
+--EXEC SearchServices @SearchTerm = 'training';
+
+------------------------------------------------------------------------

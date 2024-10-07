@@ -1,0 +1,107 @@
+--1----Add new Client
+
+CREATE PROCEDURE AddClient
+    @FirstName NVARCHAR(50),
+    @LastName NVARCHAR(50),
+    @Email NVARCHAR(100),
+    @ContactNumber NVARCHAR(15),
+    @MembershipType NVARCHAR(50),
+    @DateJoined DATE
+AS
+BEGIN
+    INSERT INTO Clients (FirstName, LastName, Email, ContactNumber, MembershipType, DateJoined)
+    VALUES (@FirstName, @LastName, @Email, @ContactNumber, @MembershipType, @DateJoined);
+END
+
+--EXEC AddClient 
+    @FirstName = 'Jane', 
+    @LastName = 'Doe', 
+    @Email = 'jane.doe@example.com', 
+    @ContactNumber = '1234567890', 
+    @MembershipType = 'Premium', 
+    @DateJoined = GETDATE();
+--------------------------------------------------------------------------------
+
+--2-----update clients info
+
+CREATE PROCEDURE UpdateClient
+    @ClientID INT,
+    @FirstName NVARCHAR(50),
+    @LastName NVARCHAR(50),
+    @Email NVARCHAR(100),
+    @ContactNumber NVARCHAR(15),
+    @MembershipType NVARCHAR(50)
+AS
+BEGIN
+    UPDATE Clients
+    SET FirstName = @FirstName,
+        LastName = @LastName,
+        Email = @Email,
+        ContactNumber = @ContactNumber,
+        MembershipType = @MembershipType
+    WHERE ClientID = @ClientID;
+END
+
+--EXEC UpdateClient 
+    @ClientID = 1, 
+    @FirstName = 'Jane', 
+    @LastName = 'Smith', 
+    @Email = 'jane.smith@example.com', 
+    @ContactNumber = '0987654321', 
+    @MembershipType = 'Standard';
+--------------------------------------------------------------------------------
+
+--3------delete client
+
+CREATE PROCEDURE DeleteClient
+    @ClientID INT
+AS
+BEGIN
+    DELETE FROM Clients
+    WHERE ClientID = @ClientID;
+END
+
+--EXEC DeleteClient @ClientID = 1;
+----------------------------------------------------------------------------------
+
+--4-----get client info
+
+CREATE PROCEDURE GetClientByID
+    @ClientID INT
+AS
+BEGIN
+    SELECT *
+    FROM Clients
+    WHERE ClientID = @ClientID;
+END
+
+--EXEC GetClientByID @ClientID = 1;
+---------------------------------------------------------------------------------
+--5-----get memberShip type
+CREATE PROCEDURE GetClientsByMembershipType
+    @MembershipType NVARCHAR(50)
+AS
+BEGIN
+    SELECT *
+    FROM Clients
+    WHERE MembershipType = @MembershipType;
+END
+--EXEC GetClientsByMembershipType @MembershipType = 'monthly';
+-------------------------------------------------------------------------------
+
+--6-----search client
+CREATE PROCEDURE SearchClients
+    @SearchTerm NVARCHAR(100)
+AS
+BEGIN
+    SELECT *
+    FROM Clients
+    WHERE FirstName LIKE '%' + @SearchTerm + '%' 
+       OR LastName LIKE '%' + @SearchTerm + '%' 
+       OR Email LIKE '%' + @SearchTerm + '%';
+END
+
+--EXEC SearchClients @SearchTerm = 'Jane';
+
+
+

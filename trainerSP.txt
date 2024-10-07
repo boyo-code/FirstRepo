@@ -1,0 +1,114 @@
+--1----- add trainer
+CREATE PROCEDURE AddTrainer
+    @FirstName NVARCHAR(50),
+    @LastName NVARCHAR(50),
+    @Email NVARCHAR(100),
+    @ContactNumber NVARCHAR(15),
+    @Specialization NVARCHAR(100),
+    @Bio NVARCHAR(500),
+    @Certifications NVARCHAR(255),
+    @Location NVARCHAR(100),
+    @HourlyRate DECIMAL(10, 2),
+    @YearsOfExperience INT,
+    @DateJoined DATE
+AS
+BEGIN
+    INSERT INTO Trainers (FirstName, LastName, Email, ContactNumber, Specialization, Bio, Certifications, Location, HourlyRate, YearsOfExperience, DateJoined)
+    VALUES (@FirstName, @LastName, @Email, @ContactNumber, @Specialization, @Bio, @Certifications, @Location, @HourlyRate, @YearsOfExperience, @DateJoined);
+END
+
+--EXEC AddTrainer 
+    @FirstName = 'John', 
+    @LastName = 'Doe', 
+    @Email = 'john.doe@example.com', 
+    @ContactNumber = '1234567890', 
+    @Specialization = 'Personal Trainer', 
+    @Bio = 'Experienced personal trainer specializing in strength training.', 
+    @Certifications = 'ACE Certified', 
+    @Location = 'New York', 
+    @HourlyRate = 50.00, 
+    @YearsOfExperience = 5, 
+    @DateJoined = '2024-10-01';
+---------------------------------------------------------------------------------
+--2----update trainer
+
+CREATE PROCEDURE UpdateTrainer
+    @TrainerID INT,
+    @FirstName NVARCHAR(50),
+    @LastName NVARCHAR(50),
+    @Email NVARCHAR(100),
+    @ContactNumber NVARCHAR(15),
+    @Specialization NVARCHAR(100),
+    @Bio NVARCHAR(500),
+    @Certifications NVARCHAR(255),
+    @Location NVARCHAR(100),
+    @HourlyRate DECIMAL(10, 2),
+    @YearsOfExperience INT
+AS
+BEGIN
+    UPDATE Trainers
+    SET FirstName = @FirstName,
+        LastName = @LastName,
+        Email = @Email,
+        ContactNumber = @ContactNumber,
+        Specialization = @Specialization,
+        Bio = @Bio,
+        Certifications = @Certifications,
+        Location = @Location,
+        HourlyRate = @HourlyRate,
+        YearsOfExperience = @YearsOfExperience
+    WHERE TrainerID = @TrainerID;
+END
+
+--EXEC UpdateTrainer 
+    @TrainerID = 1, 
+    @FirstName = 'John', 
+    @LastName = 'Smith', 
+    @Email = 'john.smith@example.com', 
+    @ContactNumber = '0987654321', 
+    @Specialization = 'Fitness Coach', 
+    @Bio = 'Expert in nutrition and fitness training.', 
+    @Certifications = 'NSCA Certified', 
+    @Location = 'Los Angeles', 
+    @HourlyRate = 60.00, 
+    @YearsOfExperience = 6;
+----------------------------------------------------------------------------------
+--3----- delete trainer
+
+CREATE PROCEDURE DeleteTrainer
+    @TrainerID INT
+AS
+BEGIN
+    DELETE FROM Trainers
+    WHERE TrainerID = @TrainerID;
+END
+
+--EXEC DeleteTrainer @TrainerID = 1;
+----------------------------------------------------------------------------------
+
+---4----- search trainer by specialisation
+
+CREATE PROCEDURE SearchTrainerBySpecialization
+    @Specialization NVARCHAR(100)
+AS
+BEGIN
+    SELECT *
+    FROM Trainers
+    WHERE Specialization LIKE '%' + @Specialization + '%';
+END
+
+--EXEC SearchTrainerBySpecialization @Specialization = 'Personal Trainer';
+----------------------------------------------------------------------------------
+--5----- get trainerby location
+
+CREATE PROCEDURE GetTrainerByLocation
+    @Location NVARCHAR(100)
+AS
+BEGIN
+    SELECT *
+    FROM Trainers
+    WHERE Location LIKE '%' + @Location + '%';
+END
+
+--EXEC GetTrainerByLocation @Location = 'New York';
+--------------------------------------------------------------------------------

@@ -1,0 +1,101 @@
+1-----create booking
+
+CREATE PROCEDURE AddBooking
+    @ClientID INT,
+    @ServiceID INT,
+    @BookingDate DATE,
+    @SessionDate DATE,
+    @Status NVARCHAR(20),
+    @TotalAmount DECIMAL(10, 2)
+AS
+BEGIN
+    INSERT INTO Bookings (ClientID, ServiceID, BookingDate, SessionDate, Status, TotalAmount)
+    VALUES (@ClientID, @ServiceID, @BookingDate, @SessionDate, @Status, @TotalAmount);
+END
+
+usage
+EXEC AddBooking @ClientID = 1, @ServiceID = 3, @BookingDate = '2024-10-01', @SessionDate = '2024-10-05', @Status = 'Confirmed', @TotalAmount = 60.00;
+
+--EXEC AddBooking @ClientID = 1, @ServiceID = 3, @BookingDate = '2024-10-01', @SessionDate = '2024-10-05', @Status = 'Confirmed', @TotalAmount = 60.00;
+
+------------------------------------------------------------------------
+
+2------delete
+
+CREATE PROCEDURE DeleteBooking
+    @BookingID INT
+AS
+BEGIN
+    DELETE FROM Bookings
+    WHERE BookingID = @BookingID;
+END
+
+--EXEC DeleteBooking @BookingID = 2;
+
+----------------------------------------------------------------------------
+3----get booking by client
+
+CREATE PROCEDURE GetBookingsByClient
+    @ClientID INT
+AS
+BEGIN
+    SELECT *
+    FROM Bookings
+    WHERE ClientID = @ClientID
+    ORDER BY BookingDate DESC;
+END
+
+--EXEC GetBookingsByClient @ClientID = 1;
+
+-----------------------------------------------------------------------------
+4----- all booking
+
+CREATE PROCEDURE GetAllBookings
+AS
+BEGIN
+    SELECT *
+    FROM Bookings
+    ORDER BY BookingDate DESC;
+END
+--EXEC GetAllBookings;
+
+-----------------------------------------------------------------------------
+5----- bookingby status
+
+CREATE PROCEDURE GetBookingsByStatus
+    @Status NVARCHAR(20)
+AS
+BEGIN
+    SELECT *
+    FROM Bookings
+    WHERE Status = @Status
+    ORDER BY BookingDate DESC;
+END
+--EXEC GetBookingsByStatus @Status = 'Confirmed';
+
+---------------------------------------------------------------
+6-----total revenue
+CREATE PROCEDURE GetTotalRevenue
+AS
+BEGIN
+    SELECT SUM(TotalAmount) AS TotalRevenue
+    FROM Bookings
+    WHERE Status = 'Confirmed';
+END
+--EXEC GetTotalRevenue;
+
+------------------------------------------------------------------
+7-------- summary
+CREATE PROCEDURE GetBookingSummary
+AS
+BEGIN
+    SELECT 
+        COUNT(*) AS TotalBookings,
+        COUNT(CASE WHEN Status = 'Confirmed' THEN 1 END) AS ConfirmedBookings,
+        COUNT(CASE WHEN Status = 'Cancelled' THEN 1 END) AS CancelledBookings,
+        SUM(TotalAmount) AS TotalRevenue
+    FROM Bookings;
+END
+
+--EXEC GetBookingSummary;
+

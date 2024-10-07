@@ -1,0 +1,98 @@
+1---add review
+CREATE PROCEDURE AddReview
+    @BookingID INT,
+    @ClientID INT,
+    @Rating INT,
+    @Comment NVARCHAR(MAX),
+    @ReviewDate DATE
+AS
+BEGIN
+    INSERT INTO Reviews (BookingID, ClientID, Rating, Comment, ReviewDate)
+    VALUES (@BookingID, @ClientID, @Rating, @Comment, @ReviewDate);
+END
+
+--EXEC AddReview @BookingID = 1, @ClientID = 1, @Rating = 5, @Comment = 'Great session, learned a lot!', @ReviewDate = '2024-10-06';
+
+-------------------------------------------------------------------------------
+2-----update
+
+CREATE PROCEDURE UpdateReview
+    @ReviewID INT,
+    @Rating INT,
+    @Comment NVARCHAR(MAX)
+AS
+BEGIN
+    UPDATE Reviews
+    SET Rating = @Rating,
+        Comment = @Comment
+    WHERE ReviewID = @ReviewID;
+END
+
+--EXEC UpdateReview @ReviewID = 1, @Rating = 4, @Comment = 'Great workout, but a bit too short.';
+
+-------------------------------------------------------------------------------
+3-----delete
+
+CREATE PROCEDURE DeleteReview
+    @ReviewID INT
+AS
+BEGIN
+    DELETE FROM Reviews
+    WHERE ReviewID = @ReviewID;
+END
+--------------------------------------------------------------------------------
+4----- get all review
+
+CREATE PROCEDURE GetAllReviews
+AS
+BEGIN
+    SELECT *
+    FROM Reviews
+    ORDER BY ReviewDate DESC;
+END
+
+--EXEC DeleteReview @ReviewID = 2;
+
+-------------------------------------------------------------------------------
+5----- trainer review
+CREATE PROCEDURE GetReviewsByTrainerName
+    @TrainerName NVARCHAR(100)
+AS
+BEGIN
+    SELECT R.*
+    FROM Reviews R
+    JOIN Bookings B ON R.BookingID = B.BookingID
+    JOIN Trainers T ON B.ServiceID = T.TrainerID
+    WHERE T.FirstName + ' ' + T.LastName = @TrainerName
+    ORDER BY R.ReviewDate DESC;
+END
+
+--EXEC GetReviewsByTrainerName @TrainerName = 'John Doe';
+
+-------------------------------------------------------------------------------
+6------ average reviewfor trainer
+
+CREATE PROCEDURE GetAverageRatingByTrainer
+    @TrainerID INT
+AS
+BEGIN
+    SELECT AVG(Rating) AS AverageRating
+    FROM Reviews R
+    JOIN Bookings B ON R.BookingID = B.BookingID
+    WHERE B.ServiceID = @TrainerID;
+END
+
+--EXEC GetAverageRatingByTrainer @TrainerID = 1;
+---------------------------------------------------------------------------------
+----7------ total review for trainer
+CREATE PROCEDURE GetTotalReviewsByTrainer
+    @TrainerID INT
+AS
+BEGIN
+    SELECT COUNT(*) AS TotalReviews
+    FROM Reviews R
+    JOIN Bookings B ON R.BookingID = B.BookingID
+    WHERE B.ServiceID = @TrainerID;
+END
+
+--EXEC GetTotalReviewsByTrainer @TrainerID = 1;

@@ -1,0 +1,51 @@
+ServiceID,TrainerID,ServiceName,Description,Price,Duration
+1,1,Personal Training,"One-on-one strength training sessions tailored to your goals.",70,60
+2,1,Group Training,"Small group sessions focused on strength and conditioning.",50,45
+3,2,Private Yoga,"Individual yoga sessions to enhance flexibility and mindfulness.",60,60
+4,2,Yoga Class,"Group yoga sessions suitable for all levels.",20,75
+5,3,Cardio Training,"High-intensity cardio sessions designed to boost endurance.",55,45
+6,3,Running Coaching,"Personalized running plans and coaching for all levels.",40,30
+7,4,Nutrition Consultation,"Personalized meal planning and nutrition advice.",100,90
+8,4,Workshops,"Group workshops on nutrition topics and healthy eating.",30,120
+9,5,CrossFit Training,"High-intensity CrossFit workouts designed to improve overall fitness.",65,60
+10,5,Open Gym Access,"Access to the gym during open hours for independent workouts.",25,120
+11,6,Weightlifting Coaching,"Personalized coaching on Olympic weightlifting techniques.",70,60
+12,6,Strength Training Program,"Customized strength training plans for all levels.",60,45
+13,7,Endurance Coaching,"Coaching for long-distance running and endurance events.",50,60
+14,7,Race Preparation,"Customized training plans for upcoming races.",55,45
+15,8,Zumba Class,"Fun and energetic group classes combining dance and fitness.",15,60
+16,8,Private Zumba,"One-on-one Zumba sessions for personalized instruction.",50,60
+17,9,Boxing Training,"Individual boxing sessions focused on technique and fitness.",65,60
+18,9,Self-Defense Classes,"Classes teaching practical self-defense techniques.",45,60
+19,10,Cycling Sessions,"Group cycling sessions focusing on endurance and technique.",40,60
+20,10,Indoor Cycling,"High-energy indoor cycling classes.",20,45
+21,11,HIIT Sessions,"High-intensity interval training classes designed to burn fat.",50,30
+22,11,Online HIIT Coaching,"Virtual HIIT training sessions tailored to your needs.",40,30
+23,12,Pilates Class,"Group Pilates sessions focusing on core strength and flexibility.",30,60
+24,12,Private Pilates,"One-on-one Pilates sessions for personalized instruction.",50,60
+25,13,Boxing Sparring,"Sparring sessions for experienced boxers.",70,60
+26,13,Boxing Fitness,"Boxing workouts focusing on fitness rather than competition.",50,45
+27,14,Functional Fitness,"Training sessions focusing on improving everyday movements.",55,60
+28,14,Group Fitness Class,"Dynamic group workouts targeting overall fitness.",25,60
+29,15,Comprehensive Personal Training,"Full-service personal training including nutrition guidance.",90,60
+30,15,Specialized Programs,"Training programs for specific goals like weight loss or muscle gain.",70,45
+31,16,Rehabilitation Training,"Customized rehabilitation exercises for injury recovery.",80,60
+32,16,Injury Prevention Workshops,"Workshops focusing on preventing common injuries.",35,90
+33,17,Team Coaching,"Coaching sessions for teams in sports like soccer and basketball.",60,60
+34,17,Skill Development,"Focused training on specific skills for team sports.",50,45
+35,18,Stretching Sessions,"Personalized stretching sessions for flexibility improvement.",30,30
+36,18,Group Stretching Class,"Group classes focusing on stretching and recovery.",20,60
+37,19,Outdoor Adventure Training,"Training sessions incorporating outdoor activities.",70,90
+38,19,Survival Skills Training,"Workshops on outdoor survival and skills.",40,120
+39,20,Dance Classes,"Group dance classes in various styles.",25,60
+40,20,Private Dance Lessons,"Individual lessons tailored to your dance style preference.",50,60
+41,21,Core Strength Training,"Focused sessions on improving core stability and strength.",45,30
+42,21,Group Core Class,"Dynamic group classes targeting core muscles.",20,60
+43,22,Bodybuilding Coaching,"Customized bodybuilding programs focusing on muscle gain.",80,60
+44,22,Posing Coaching,"Individual coaching for bodybuilding posing and presentation.",50,45
+45,23,Group Fitness Coaching,"Leading group fitness sessions in various formats.",30,60
+46,23,Outdoor Bootcamp,"High-energy outdoor workouts for all fitness levels.",25,60
+47,24,Outdoor Functional Training,"Functional training sessions in outdoor environments.",55,60
+48,24,Team Building Activities,"Group activities designed to build teamwork and fitness.",40,90
+49,25,Wellness Coaching,"Holistic health coaching focusing on lifestyle changes.",90,60
+50,25,Stress Management Workshops,"Workshops focused on managing stress and improving mental health.",50,120

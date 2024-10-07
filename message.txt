@@ -1,0 +1,47 @@
+--add message
+
+CREATE PROCEDURE AddCommunication
+    @SenderID INT,
+    @RecipientID INT,
+    @Message NVARCHAR(500),
+    @DateSent DATE,
+    @Type NVARCHAR(50)
+AS
+BEGIN
+    INSERT INTO Communications (SenderID, RecipientID, Message, DateSent, Type)
+    VALUES (@SenderID, @RecipientID, @Message, @DateSent, @Type);
+END
+
+--EXEC AddCommunication 
+    @SenderID = 1, 
+    @RecipientID = 1, 
+    @Message = 'Can we schedule a session for next week?', 
+    @DateSent = '2024-10-01', 
+    @Type = 'Client';
+---------------------------------------------------------------------------------
+--delete message
+
+CREATE PROCEDURE DeleteCommunication
+    @CommunicationID INT
+AS
+BEGIN
+    DELETE FROM Communications
+    WHERE CommunicationID = @CommunicationID;
+END
+
+--EXEC DeleteCommunication @CommunicationID = 1;
+---------------------------------------------------------------------------------
+--messageby trainer
+
+CREATE PROCEDURE GetCommunicationsByTrainerID
+    @TrainerID INT
+AS
+BEGIN
+    SELECT *
+    FROM Communications
+    WHERE RecipientID = @TrainerID OR SenderID = @TrainerID
+    ORDER BY DateSent DESC;
+END
+
+--EXEC GetCommunicationsByTrainerID @TrainerID = 1;
+

@@ -1,0 +1,26 @@
+TrainerID,FirstName,LastName,Email,ContactNumber,Specialization,DateJoined,Bio,Certifications,Location,HourlyRate,YearsOfExperience
+1,John,Doe,john.doe@gmail.com,905-0001,Strength Training,2023-01-15,"Certified strength trainer with 5 years of experience.","CSCS, NSCA","New York, NY",120,5
+2,Jane,Smith,jane.smith@gmail.com,905-0002,Yoga,2023-02-10,"Yoga instructor specializing in Hatha and Vinyasa styles.","RYT-200","Los Angeles, CA",75,3
+3,Emily,Brown,emily.brown@gmail.com,905-0003,Cardio,2023-03-05,"Passionate about running and high-intensity interval training.","ACE, AFAA","Chicago, IL",90,4
+4,Michael,Johnson,michael.johnson@gmail.com,905-0004,Nutrition,2023-04-01,"Nutritionist focused on meal planning and healthy eating.","CNS, NCSF","Houston, TX",70,6
+5,David,Wilson,david.wilson@gmail.com,905-0005,CrossFit,2023-04-25,"CrossFit coach with a competitive background in athletics.","CF-L1","Phoenix, AZ",65,5
+6,Sarah,Lee,sarah.lee@gmail.com,905-0006,Weightlifting,2023-05-20,"Expert in Olympic weightlifting techniques and training.","USA Weightlifting","Philadelphia, PA",120,4
+7,James,Garcia,james.garcia@gmail.com,905-0007,Running,2023-06-15,"Marathon runner and coach dedicated to endurance training.","RRCA Certified Coach","San Antonio, TX",75,3
+8,Laura,Miller,laura.miller@gmail.com,905-0008,Zumba,2023-07-10,"Zumba instructor with a fun and energetic approach to fitness.","Zumba Instructor License","San Diego, CA",40,2
+9,Daniel,Davis,daniel.davis@gmail.com,905-0009,Martial Arts,2023-08-05,"Black belt in karate with extensive self-defense training.","Karate Black Belt","Dallas, TX",90,5
+10,Jessica,Rodriguez,jessica.rodriguez@gmail.com,905-0010,Cycling,2023-09-01,"Cycling enthusiast who enjoys both road and mountain biking.","Certified Cycling Instructor","San Jose, CA",75,4
+11,Andrew,Martinez,andrew.martinez@gmail.com,905-0011,HIIT,2023-09-25,"HIIT specialist focusing on fast-paced, effective workouts.","ACE, AFAA","Austin, TX",45,3
+12,Ashley,Lopez,ashley.lopez@gmail.com,905-0012,Pilates,2023-10-10,"Pilates instructor with a focus on core strength and flexibility.","Balanced Body Pilates Instructor","Jacksonville, FL",90,4
+13,Kevin,Clark,kevin.clark@gmail.com,905-0013,Boxing,2023-10-30,"Boxing coach with a passion for fitness and self-defense.","USA Boxing Coach","Fort Worth, TX",65,5
+14,Michelle,Hernandez,michelle.hernandez@gmail.com,905-0014,Functional Training,2023-11-15,"Functional training expert helping clients with everyday movements.","NASM, ACE","Columbus, OH",120,4
+15,Matthew,Walker,matthew.walker@gmail.com,905-0015,Personal Training,2023-11-20,"Certified personal trainer dedicated to individualized fitness plans.","CPT, ACE","Indianapolis, IN",70,7
+16,Kimberly,Hall,kimberly.hall@gmail.com,905-0016,Rehabilitation,2023-12-05,"Rehabilitation specialist focusing on injury recovery and prevention.","Physical Therapy Assistant","Charlotte, NC",65,6
+17,Joshua,Allen,joshua.allen@gmail.com,905-0017,Team Sports,2023-12-15,"Experience in coaching soccer and basketball at competitive levels.","USSF Coaching License","San Francisco, CA",90,5
+18,Stephanie,Yang,stephanie.yang@gmail.com,905-0018,Stretching,2023-12-25,"Stretching coach promoting flexibility and muscle recovery.","Certified Stretching Coach","Seattle, WA",40,3
+19,William,King,william.king@gmail.com,905-0019,Adventure Sports,2024-01-01,"Adventure sports coach specializing in outdoor activities.","Wilderness First Responder","Denver, CO",70,8
+20,Brian,Wright,brian.wright@gmail.com,905-0020,Dance,2024-01-10,"Dance instructor offering classes in various styles from salsa to hip-hop.","Dance Educator Certification","Washington, DC",75,4
+21,Patricia,Scott,patricia.scott@gmail.com,905-0021,Core Training,2024-01-15,"Core training expert focusing on stability and strength.","ACE","Boston, MA",90,4
+22,Charles,Adams,charles.adams@gmail.com,905-0022,Bodybuilding,2024-01-20,"Bodybuilding trainer with a focus on muscle gain and aesthetics.","IFBB Pro","Nashville, TN",175,7
+23,Nancy,Baker,nancy.baker@gmail.com,905-0023,Group Fitness,2024-01-25,"Group fitness instructor creating engaging and fun workout sessions.","AFAA Group Fitness Instructor","Baltimore, MD",45,3
+24,Angela,Garrett,angela.garrett@gmail.com,905-0024,Outdoor Training,2024-02-01,"Outdoor training enthusiast focusing on functional fitness.","Certified Outdoor Fitness Trainer","Milwaukee, WI",75,3
+25,Henry,Mitchell,henry.mitchell@gmail.com,905-0025,Wellness Coaching,2024-02-05,"Wellness coach specializing in holistic health and lifestyle changes.","Certified Health Coach","Albuquerque, NM",65,5

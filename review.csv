@@ -1,0 +1,51 @@
+ReviewID,BookingID,ClientID,Rating,Comment,ReviewDate
+1,1,1,5,"Great session, learned a lot!",2024-10-06
+2,2,2,2,"Trainer canceled last minute.",2024-10-07
+3,3,3,4,"Good experience, but could use more variety.",2024-10-08
+4,4,4,5,"Fantastic workout, highly recommend!",2024-10-09
+5,5,5,3,"Average session, nothing special.",2024-10-10
+6,6,6,4,"Really enjoyed it, trainer was very helpful.",2024-10-11
+7,7,7,5,"Best trainer ever! Motivated me a lot.",2024-10-12
+8,8,8,3,"It was okay, not what I expected.",2024-10-13
+9,9,9,5,"Excellent guidance and support!",2024-10-14
+10,10,10,4,"Good session, but the venue was crowded.",2024-10-15
+11,11,11,2,"Did not meet my expectations.",2024-10-16
+12,12,12,5,"Amazing! I felt energized and motivated.",2024-10-17
+13,13,13,4,"Very knowledgeable trainer, would book again.",2024-10-18
+14,14,14,3,"Decent, but I wanted more one-on-one time.",2024-10-19
+15,15,15,5,"Loved the session! Great atmosphere.",2024-10-20
+16,16,16,2,"Not worth the price, poor experience.",2024-10-21
+17,17,17,4,"Great workout, left me feeling great!",2024-10-22
+18,18,18,5,"Best decision I made for my fitness!",2024-10-23
+19,19,19,4,"Trainer was helpful, but a bit disorganized.",2024-10-24
+20,20,20,3,"It was alright, nothing to rave about.",2024-10-25
+21,21,21,5,"Incredible session, I learned so much!",2024-10-26
+22,22,22,2,"Very disappointing, wouldn't recommend.",2024-10-27
+23,23,23,4,"Good session, very engaging trainer.",2024-10-28
+24,24,24,5,"Fantastic! Can't wait for the next session.",2024-10-29
+25,25,25,3,"Average experience, expected more.",2024-10-30
+26,1,1,4,"Great workout, but a bit too short.",2024-11-01
+27,2,2,5,"Perfect session! Trainer was amazing.",2024-11-02
+28,3,3,3,"It was okay, felt rushed at times.",2024-11-03
+29,4,4,5,"Incredible! Best fitness class ever.",2024-11-04
+30,5,5,2,"Not what I expected, trainer was late.",2024-11-05
+31,6,6,4,"Very good experience, will return!",2024-11-06
+32,7,7,5,"Loved it! Highly recommend this trainer!",2024-11-07
+33,8,8,4,"Enjoyed the session, learned a lot.",2024-11-08
+34,9,9,3,"It was fine, but not my favorite.",2024-11-09
+35,10,10,5,"Fantastic! The trainer was inspiring!",2024-11-10
+36,11,11,2,"Would not recommend this trainer.",2024-11-11
+37,12,12,4,"Good guidance, felt supported throughout.",2024-11-12
+38,13,13,5,"Loved it! Can't wait for the next session.",2024-11-13
+39,14,14,3,"Decent, but could improve on engagement.",2024-11-14
+40,15,15,5,"One of the best sessions I've had!",2024-11-15
+41,16,16,2,"Very disappointing experience, trainer wasn't attentive.",2024-11-16
+42,17,17,4,"Good, but I'd like more personalized feedback.",2024-11-17
+43,18,18,5,"Best workout! Highly recommend.",2024-11-18
+44,19,19,4,"Good, trainer was knowledgeable and friendly.",2024-11-19
+45,20,20,3,"Average session, expected more focus.",2024-11-20
+46,21,21,5,"Amazing! Totally transformed my routine.",2024-11-21
+47,22,22,2,"Not a great fit for my goals.",2024-11-22
+48,23,23,4,"Enjoyed the class, felt energized.",2024-11-23
+49,24,24,5,"Incredible session, trainer was excellent!",2024-11-24
+50,25,25,3,"It was good, but could be better.",2024-11-25

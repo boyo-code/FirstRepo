@@ -1,0 +1,13 @@
+MembershipID,MembershipType,Price,Duration,Benefits
+1,Basic,19.99,1,"Access to gym facilities"
+2,premium1,29.99,1,"Access to gym facilities, Group classes"
+3,gold1,49.99,1,"Access to gym facilities, Group classes, Personal training session"
+4,Basic,49.99,3,"Access to gym facilities"
+5,premium1,79.99,6,"Access to gym facilities, Group classes, Nutrition plan"
+6,gold1,99.99,12,"Access to gym facilities, Group classes, Personal training, Nutrition plan"
+7,Basic,15.99,1,"Access to gym facilities"
+8,premium1,25.99,1,"Access to gym facilities, Group classes"
+9,gold1,45.99,1,"Access to gym facilities, Group classes, Personal training session"
+10,Basic,35.99,3,"Access to gym facilities"
+11,premium1,89.99,12,"Access to gym facilities, Group classes, Nutrition plan, Free merchandise"
+12,gold1,150.00,6,"Access to gym facilities, Group classes, Personal training, Nutrition plan, VIP events"
