@@ -1,32 +1,31 @@
 --add message
 
 CREATE PROCEDURE AddCommunication
-    @SenderID INT,
-    @RecipientID INT,
-    @Message NVARCHAR(500),
-    @DateSent DATE,
-    @Type NVARCHAR(50)
-AS
+    @Sender_ID INT,
+    @Receiver_ID INT,
+    @MessageContent NVARCHAR(500),
+    @SentAT DATE
+    AS
 BEGIN
-    INSERT INTO Communications (SenderID, RecipientID, Message, DateSent, Type)
-    VALUES (@SenderID, @RecipientID, @Message, @DateSent, @Type);
+    INSERT INTO Messages (Sender_ID, Receiver_ID, MessageConten, SentAT)
+    VALUES (@Sender_ID, @Receiver_ID, @MessageConten, @SentAT);
 END
 
 --EXEC AddCommunication 
-    @SenderID = 1, 
-    @RecipientID = 1, 
-    @Message = 'Can we schedule a session for next week?', 
-    @DateSent = '2024-10-01', 
-    @Type = 'Client';
+    @Sender_ID = 1, 
+    @Receiver_ID = 1, 
+    @MessageContent = 'Can we schedule a session for next week?', 
+    @SentAT = '2024-10-01', 
+   
 ---------------------------------------------------------------------------------
 --delete message
 
 CREATE PROCEDURE DeleteCommunication
-    @CommunicationID INT
+    @Sender_ID INT
 AS
 BEGIN
     DELETE FROM Communications
-    WHERE CommunicationID = @CommunicationID;
+    WHERE Sender_ID = @CommunicationID;
 END
 
 --EXEC DeleteCommunication @CommunicationID = 1;
@@ -38,9 +37,9 @@ CREATE PROCEDURE GetCommunicationsByTrainerID
 AS
 BEGIN
     SELECT *
-    FROM Communications
-    WHERE RecipientID = @TrainerID OR SenderID = @TrainerID
-    ORDER BY DateSent DESC;
+    FROM Messages
+    WHERE Receiver_ID = @TrainerID OR Sender_ID = @TrainerID
+    ORDER BY MessageContent DESC;
 END
 
 --EXEC GetCommunicationsByTrainerID @TrainerID = 1;
