@@ -1,4 +1,4 @@
-1--2---create booking
+1--4---create booking
 
 CREATE PROCEDURE AddBooking
     @ClientID INT,
