@@ -1,23 +1,24 @@
 1--4---create booking
 
 CREATE PROCEDURE AddBooking
-    @ClientID INT,
-    @ServiceID INT,
+    @Booking_ID INT,
+    @Client_ID INT,
+    @Trainer_ID INT,
     @BookingDate DATE,
-    @SessionDate DATE,
-    @Status NVARCHAR(20),
-    @TotalAmount DECIMAL(10, 2)
+    @Duration TIME(7),
+    @Price DECIMAL(10, 2),
+    @Status NCHARVAR(20)
+
 AS
 BEGIN
-    INSERT INTO Bookings (ClientID, ServiceID, BookingDate, SessionDate, Status, TotalAmount)
-    VALUES (@ClientID, @ServiceID, @BookingDate, @SessionDate, @Status, @TotalAmount);
+    INSERT INTO Bookings (Booking_ID INT, Client_ID, Trainer_ID, BookingDate, Duration, Price,Status)
+    VALUES (@Booking_ID, @Client_ID, @Trainer_ID, @BookingDate, @Duration, @Price,@Status);
 END
 
 usage
-EXEC AddBooking @ClientID = 1, @ServiceID = 3, @BookingDate = '2024-10-01', @SessionDate = '2024-10-05', @Status = 'Confirmed', @TotalAmount = 60.00;
+EXEC AddBooking @Client_ID = 1, @Trainer_ID = 3, @Date = '2024-10-01', @Duration = '2024-10-05', @Status = 'Confirm' , @Price = 60.00 ;
 
---EXEC AddBooking @ClientID = 1, @ServiceID = 3, @BookingDate = '2024-10-01', @SessionDate = '2024-10-05', @Status = 'Confirmed', @TotalAmount = 60.00;
-
+--EXEC AddBooking @Client_ID = 1, @Trainer_ID = 3, @Date = '2024-10-01', @Duration = '2024-10-05'@Status = 'Confirm' , @Price = 60.00;
 ------------------------------------------------------------------------
 
 2------delete
@@ -26,8 +27,8 @@ CREATE PROCEDURE DeleteBooking
     @BookingID INT
 AS
 BEGIN
-    DELETE FROM Bookings
-    WHERE BookingID = @BookingID;
+    DELETE FROM Booking
+    WHERE Booking_ID = @BookingID;
 END
 
 --EXEC DeleteBooking @BookingID = 2;
@@ -36,12 +37,12 @@ END
 3----get booking by client
 
 CREATE PROCEDURE GetBookingsByClient
-    @ClientID INT
+    @Client_ID INT
 AS
 BEGIN
     SELECT *
-    FROM Bookings
-    WHERE ClientID = @ClientID
+    FROM Booking
+    WHERE Client_ID = @ClientID
     ORDER BY BookingDate DESC;
 END
 
@@ -54,7 +55,7 @@ CREATE PROCEDURE GetAllBookings
 AS
 BEGIN
     SELECT *
-    FROM Bookings
+    FROM Booking
     ORDER BY BookingDate DESC;
 END
 --EXEC GetAllBookings;
@@ -67,7 +68,7 @@ CREATE PROCEDURE GetBookingsByStatus
 AS
 BEGIN
     SELECT *
-    FROM Bookings
+    FROM Booking
     WHERE Status = @Status
     ORDER BY BookingDate DESC;
 END
@@ -78,8 +79,8 @@ END
 CREATE PROCEDURE GetTotalRevenue
 AS
 BEGIN
-    SELECT SUM(TotalAmount) AS TotalRevenue
-    FROM Bookings
+    SELECT SUM(Price) AS TotalRevenue
+    FROM Booking
     WHERE Status = 'Confirmed';
 END
 --EXEC GetTotalRevenue;
@@ -90,10 +91,10 @@ CREATE PROCEDURE GetBookingSummary
 AS
 BEGIN
     SELECT 
-        COUNT(*) AS TotalBookings,
+        COUNT(*) AS Price,
         COUNT(CASE WHEN Status = 'Confirmed' THEN 1 END) AS ConfirmedBookings,
         COUNT(CASE WHEN Status = 'Cancelled' THEN 1 END) AS CancelledBookings,
-        SUM(TotalAmount) AS TotalRevenue
+        SUM(Price) AS TotalRevenue
     FROM Bookings;
 END
 
